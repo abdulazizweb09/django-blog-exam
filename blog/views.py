@@ -109,3 +109,14 @@ class AddView(View):
         article.tags.add(tag) 
 
         return redirect('article')
+    
+
+class MyView(View):
+    def get(self,request):
+        article=Article.objects.filter(author=request.user)
+
+        context={
+            'article':article,
+        }
+
+        return render(request,'my.html',context)

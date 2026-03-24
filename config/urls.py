@@ -27,4 +27,5 @@ urlpatterns = [
     path('articles/',ArticleView.as_view(),name='article'),
     path('details/<int:id>/',DetailsView.as_view(),name='details'),
     path('add/',AddView.as_view(),name='add'),
+    path('my-articles/',MyView.as_view(),name='my')
 ]
